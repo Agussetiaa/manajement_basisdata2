@@ -63,6 +63,7 @@ SELECT id_kamar, nomor_kamar, tipe_kamar, harga_per_malam, status
 FROM kamar
 ORDER BY nomor_kamar;
 ```
+![image](https://github.com/user-attachments/assets/3375451e-477c-469a-a798-ed2a3b01cbab)
 
 
 ### 2. Laporan Reservasi yang Sedang Berlangsung
@@ -75,6 +76,7 @@ JOIN kamar k ON r.id_kamar = k.id_kamar
 WHERE r.status_reservasi = 'dipesan' AND CURDATE() BETWEEN r.tanggal_checkin AND
 r.tanggal_checkout;
 ```
+![image](https://github.com/user-attachments/assets/c068111b-5886-4bfd-84cf-0e8fbcf13621)
 
 
 ### 3. Laporan Riwayat Pembayaran Pelanggan
@@ -87,6 +89,8 @@ JOIN pelanggan pel ON r.id_pelanggan = pel.id_pelanggan
 ORDER BY p.tanggal_pembayaran DESC;
 ```
 
+![image](https://github.com/user-attachments/assets/4681bf30-9d57-484f-8d66-1911bc87e08b)
+
 
 ### 4. Laporan Pendapatan dari Reservasi
 ```
@@ -94,6 +98,7 @@ SELECT SUM(p.jumlah) AS total_pendapatan
 FROM pembayaran p
 WHERE p.status_pembayaran = 'selesai';
 ```
+![image](https://github.com/user-attachments/assets/ffe113f6-47ae-4e73-ad4c-d07a703a23ef)
 
 
 ### 5.Laporan Ketersediaan Kamar Berdasarkan Tipe
@@ -103,3 +108,4 @@ FROM kamar
 WHERE status = 'tersedia'
 GROUP BY tipe_kamar;
 ```
+![image](https://github.com/user-attachments/assets/7c3f38c7-b3bd-4482-b2a2-206bfbfe4cb8)
